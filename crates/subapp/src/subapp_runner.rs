@@ -37,14 +37,13 @@ pub fn run_subapp_once(parent: &mut World, app: &mut App) {
         world.entities_mut().flush_as_invalid();
     }
 
-    schedule.for_each_stages_mut(|_, stage| {
+    for (_, stage) in schedule.iter_stages_mut() {
         if stage.is_extract_stage() {
             run_extract_stage_with_app_world(parent, stage, world);
         } else {
             stage.run(world)
         }
-    });
-
+    }
 }
 
 

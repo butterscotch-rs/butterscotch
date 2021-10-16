@@ -1,0 +1,10 @@
+[package]
+name = "butterscotch-examples-dev"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+butterscotch = { path="../../crates/butterscotch" }
+log = "0.4"
+chrono = "0.4"
+fern = "0.6.0"

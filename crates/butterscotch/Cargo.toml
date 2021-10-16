@@ -1,0 +1,10 @@
+[package]
+name = "butterscotch"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+bevy                = { path="../../shims/bevy" }
+butterscotch-common = { path="../common" }
+butterscotch-render = { path="../render" }
+butterscotch-window = { path="../window" }

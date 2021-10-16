@@ -1,0 +1,4 @@
+[submodule "deps/bevy"]
+	path = deps/bevy
+	url = https://github.com/butterscotch-rs/bevy.git
+	branch = pipelined-rendering

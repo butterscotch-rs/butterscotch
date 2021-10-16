@@ -1,0 +1,13 @@
+[package]
+name = "butterscotch-render"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+bevy = { path="../../shims/bevy" }
+butterscotch-subapp = { path="../subapp" }
+log = "0.4"
+glam = "0.18.0"
+wgpu = "0.11.0"
+raw-window-handle = "0.3.3"
+futures-lite = "1.4.0"

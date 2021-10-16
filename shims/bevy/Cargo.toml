@@ -1,0 +1,10 @@
+[package]
+name = "bevy"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies.bevy_ecs]
+path="../../deps/bevy/crates/bevy_ecs"
+
+[dependencies.bevy_app]
+path="../../deps/bevy/crates/bevy_app"

@@ -276,19 +276,11 @@ name = "butterscotch-render"
 version = "0.1.0"
 dependencies = [
  "bevy",
- "butterscotch-subapp",
  "futures-lite",
  "glam",
  "log",
  "raw-window-handle",
  "wgpu",
-]
-
-[[package]]
-name = "butterscotch-subapp"
-version = "0.1.0"
-dependencies = [
- "bevy",
 ]
 
 [[package]]

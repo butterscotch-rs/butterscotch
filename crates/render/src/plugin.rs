@@ -17,6 +17,6 @@ pub struct RenderPlugin;
 
 impl Plugin for RenderPlugin {
     fn build(&self, app: &mut App) {
-        app.add_sub_app(RenderApp, RenderApp::create(), RenderApp::run);
+        app.add_sub_app(RenderApp, RenderApp::create());
     }
 }

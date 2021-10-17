@@ -3,19 +3,8 @@
 \*================================================================*/
 
 use bevy::{
-    app::{
-        App,
-        AppLabel,
-    }, 
-    ecs::{
-        schedule::{SystemStage, StageLabel},
-        world::World
-    }
-};
-
-use butterscotch_subapp::{
-    run_subapp_once,
-    run_subapp
+    app::{App, AppLabel, }, 
+    ecs::schedule::{ScheduleStageKind, StageLabel, SystemStage}
 };
 
 #[derive(Debug, Hash, PartialEq, Eq, Clone, StageLabel)]
@@ -35,7 +24,7 @@ impl RenderApp {
         let mut render_app = App::empty();
 
         render_app
-            .add_stage(RenderStage::Extract, SystemStage::parallel().mark_extract_stage())
+            .add_stage(RenderStage::Extract, SystemStage::parallel()).set_stage_kind(&RenderStage::Extract, ScheduleStageKind::Extract)
             .add_stage(RenderStage::Prepare, SystemStage::parallel())
             .add_stage(RenderStage::Render,  SystemStage::parallel()/*with_system(render_system.exclusive_system())*/)
             .add_stage(RenderStage::Cleanup, SystemStage::parallel());
@@ -43,12 +32,5 @@ impl RenderApp {
         render_app
     }
 
-    pub fn run(parent: &mut World, app: &mut App) {
-        run_subapp(parent, app);
-    }
-
-    pub fn run_once(parent: &mut World, app: &mut App) {
-        run_subapp_once(parent, app);
-    }
 }
 
